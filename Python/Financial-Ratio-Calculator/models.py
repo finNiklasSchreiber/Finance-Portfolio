@@ -10,3 +10,4 @@ class FinancialData:
         self.gross_profit = None
         self.operating_income = None
         self.net_income = None
+        self.free_cash_flow = None
