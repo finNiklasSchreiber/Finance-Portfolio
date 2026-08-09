@@ -4,7 +4,9 @@
 
 A modular Python-based financial analysis tool for equity research.
 
-### Current Features
+## Current Features
+
+### Financial Analysis
 - Financial Statement Analysis
 - Free Cash Flow
 - Revenue Growth
@@ -16,7 +18,8 @@ A modular Python-based financial analysis tool for equity research.
 
 ### Data & Visualization
 - Historical revenue visualization
-- Annual and quarterly data handling
+- Historical financial data handling
+- Annual and quarterly data analysis
 - Ticker validation
 
 ### Technologies
