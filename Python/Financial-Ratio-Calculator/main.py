@@ -1,10 +1,20 @@
 import yfinance as yf
+import os
 
 """Collecting the Data that is needed for the program"""
-from financial_data import load_financial_data
-from financial_data import get_historical_data
+from financial_data import(
+    load_financial_data,
+    get_historical_data
+)
 from display import print_company_summary
 from charting import plot_revenue
+from calculations import(
+    calculate_historical_numbers,
+    calculate_growth
+)
+from report import(
+    create_report
+)
 
 """Stock Ticker Assignment"""
 #Asks for input, assigns value and prints the name to check if you have the right company
@@ -42,12 +52,46 @@ financials = load_financial_data(
     period=period
 )
 
-"""Actual Display"""
-print_company_summary(stock,financials)
-
+"""Historical Data"""
 revenue = get_historical_data(
         stock,
         "Total Revenue",
         period= period
     )
-plot_revenue(revenue, period=period)
+
+"""Historical Revenue Growth"""
+historical_growth = calculate_historical_numbers(
+    revenue,
+    calculate_growth
+)
+"""Revenue Chart"""
+chart_path = os.path.join(
+    "output",
+    f"{ticker}_{period}_revenue.png"
+)
+
+plot_revenue(
+    revenue,
+    period=period,
+    save_path=chart_path
+)
+
+"""Actual Display"""
+print_company_summary(stock,financials)
+
+"""Historical Growth Display"""
+print("\nHistorical Revenue Growth:")
+
+for date, growth in historical_growth.items():
+    print(f"{date.year}: {growth:.2f}%")
+
+"""Creating output"""
+create_report(
+    company_name,
+    ticker,
+    period,
+    financials,
+    revenue,
+    historical_growth,
+    chart_path
+)

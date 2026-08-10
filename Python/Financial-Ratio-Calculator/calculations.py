@@ -1,9 +1,10 @@
+import pandas as pd
+
 #Calculation formula for margins
 def calculate_margin(numerator, denominator):
     return (numerator / denominator) * 100
 #Calculation formula for growth
 def calculate_growth(current, previous):
-
     return ((current - previous) / previous) * 100
 #Growth Calculations
 def calculate_revenue_growth(financials):
@@ -17,6 +18,23 @@ def calculate_fcf_growth(financials):
     return calculate_growth(
         financials.free_cash_flow.current,
         financials.free_cash_flow.previous
+    )
+def calculate_historical_numbers(values, calculation_function):
+
+    results = []
+
+    for i in range (1, len(values)):
+        current = values.iloc[i]
+        previous = values.iloc[i - 1]
+
+        result = calculation_function(
+            current,
+            previous
+        )
+        results.append(result)
+    return pd.Series(
+        results,
+        index = values.index[1:]
     )
 
 #Margin Calculations

@@ -8,14 +8,28 @@ FINANCIAL_STATEMENT_MAP = {
 
 #Getting historical Data from the stock
 def get_historical_data(stock,metric, period="annual"):
+    statement_type = FINANCIAL_STATEMENT_MAP.get(metric, "financials")
+
     if period == "annual":
-        values = stock.financials.loc[metric]
+
+        if statement_type == "cashflow":
+            financial_statement = stock.cashflow
+        else:
+            financial_statement = stock.financials
+
     elif period == "quarterly":
-        values = stock.quarterly_financials.loc[metric]
+
+        if statement_type == "cashflow":
+            financial_statement = stock.quarterly_cashflow
+        else:
+            financial_statement = stock.quarterly_financials
+
     else:
         raise ValueError("Period must be 'annual' or 'quarterly'")
 
-    return values.dropna()
+    values = financial_statement.loc[metric].dropna()
+
+    return values.sort_index()
 
 
 #Gets financial Data from the stock
