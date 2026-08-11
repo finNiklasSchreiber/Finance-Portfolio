@@ -1,0 +1,302 @@
+
+    <!DOCTYPE html>
+
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Indicator - MSFT</title>
+
+        <style>
+
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 1000px;
+                margin: 40px auto;
+                padding: 0 30px;
+            }
+
+            h1 {
+                margin-bottom: 5px;
+                font-size: 32px;
+                letter-spacing: 1px;
+                color: #1f4e79;
+            }
+
+            .report-subtitle{
+                color: #555;
+                font-size: 18px;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+
+            .company-name{
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .report-meta{
+                color: #666;
+                font-size: 14px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-top: 45px;
+                margin-bottom: 18px;
+                font-size: 22px;
+                border-left: 4px solid #1f4e79;
+                padding-left: 10px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 9px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            th {
+                font-weight: bold;
+                text-align: left;
+                border-bottom: 2px solid #333;
+            }
+
+            .numeric {
+                text-align: right;
+            }
+            
+            .report-chart{
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-top: 15px;
+            }
+
+            .growth-positive {
+                color: #2e7d32;
+            }
+
+            .growth-negative {
+                 color: #c62828;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <header class="report-header">
+
+            <h1>INDICATOR</h1>
+
+            <p class="report-subtitle">
+            Financial Analysis Report
+            </p>
+
+            <div class="company-name">
+            Microsoft Corporation
+            </div>
+
+            <div class="report-meta">
+            MSFT · Quarterly Analysis
+            </div>
+        </header>
+
+
+        <h2>Financial Overview</h2>
+
+        <table>
+
+            <tr>
+                <th>Metric</th>
+                <th class="numeric">Value</th>
+            </tr>
+
+            <tr>
+                <td>Revenue</td>
+                <td class="numeric">$90.01B</td>
+            </tr>
+
+            <tr>
+                <td>Gross Profit</td>
+                <td class="numeric">$60.48B</td>
+            </tr>
+
+            <tr>
+                <td>Operating Income</td>
+                <td class="numeric">$40.60B</td>
+            </tr>
+
+            <tr>
+                <td>Net Income</td>
+                <td class="numeric">$35.77B</td>
+            </tr>
+
+            <tr>
+                <td>Free Cash Flow</td>
+                <td class="numeric">$19.64B</td>
+            </tr>
+
+        </table>
+
+
+        <h2>Performance</h2>
+
+        <table>
+
+            <tr>
+                <th>Metric</th>
+                <th class="numeric">Value</th>
+            </tr>
+
+            <tr>
+                <td>Revenue Growth</td>
+                <td class="numeric">
+                    <span class="growth-positive">
+                        8.59%
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>FCF Growth</td>
+                <td class="numeric">
+                    <span class="growth-positive">
+                        24.27%
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gross Margin</td>
+                <td class="numeric">67.20%</td>
+            </tr>
+
+            <tr>
+                <td>Operating Margin</td>
+                <td class="numeric">45.11%</td>
+            </tr>
+
+            <tr>
+                <td>Net Margin</td>
+                <td class="numeric">39.74%</td>
+            </tr>
+
+            <tr>
+                <td>FCF Margin</td>
+                <td class="numeric">21.82%</td>
+            </tr>
+
+        </table>
+
+
+        <h2>Historical Revenue</h2>
+
+        <table>
+
+            <tr>
+                <th>Period</th>
+                <th class="numeric">Revenue</th>
+            </tr>
+
+            
+        <tr>
+            <td>Q2 2025</td>
+            <td class="numeric">$76.44B</td>
+        </tr>
+        
+        <tr>
+            <td>Q3 2025</td>
+            <td class="numeric">$77.67B</td>
+        </tr>
+        
+        <tr>
+            <td>Q4 2025</td>
+            <td class="numeric">$81.27B</td>
+        </tr>
+        
+        <tr>
+            <td>Q1 2026</td>
+            <td class="numeric">$82.89B</td>
+        </tr>
+        
+        <tr>
+            <td>Q2 2026</td>
+            <td class="numeric">$90.01B</td>
+        </tr>
+        
+
+        </table>
+
+
+        <h2>Historical Revenue Growth</h2>
+
+        <table>
+
+            <tr>
+                <th>Period</th>
+                <th class="numeric">Revenue Growth</th>
+            </tr>
+
+            
+        <tr>
+            <td>Q3 2025</td>
+            <td class="numeric">
+                <span class="growth-positive">
+                    1.61%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Q4 2025</td>
+            <td class="numeric">
+                <span class="growth-positive">
+                    4.63%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Q1 2026</td>
+            <td class="numeric">
+                <span class="growth-positive">
+                    1.98%
+                </span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Q2 2026</td>
+            <td class="numeric">
+                <span class="growth-positive">
+                    8.59%
+                </span>
+            </td>
+        </tr>
+        
+
+        </table>
+
+
+        <h2>Revenue Development</h2>
+
+        <img
+            src="MSFT_quarterly_revenue.png"
+            alt="Revenue Development"
+            class="report-chart"
+        >
+
+
+    </body>
+
+    </html>
+    
