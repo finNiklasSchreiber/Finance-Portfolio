@@ -24,6 +24,7 @@ A modular Python-based financial analysis tool for equity research.
 
 ### Reporting
 - HTML financial analysis reports
+- PDF financial analysis reports
 - Financial overview and performance sections
 - Historical revenue and revenue growth tables
 - Integrated revenue development charts
@@ -35,17 +36,13 @@ A modular Python-based financial analysis tool for equity research.
 - Pandas
 - yfinance
 - Matplotlib
+- WeasyPrint
 
-## Added in Last Update — v0.4
+## Added in Last Update — v0.5
 
-- Added annual and quarterly analysis selection
-- Added historical revenue growth calculations
-- Added HTML financial analysis reports
-- Added integrated revenue development charts
-- Improved chart readability for longer historical periods
-- Added positive/negative color highlighting for growth metrics
-- Improved annual and quarterly period labeling
-- Refactored report generation for cleaner code structure
+- Added PDF financial analysis reports
+- Added HTML-to-PDF report generation
+- Improved PDF chart layout
 
 
 ### Project Status

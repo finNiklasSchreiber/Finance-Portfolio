@@ -1,5 +1,6 @@
 import os
-
+os.environ["WEASYPRINT_DLL_DIRECTORIES"] = r"C:\msys64\mingw64\bin"
+from weasyprint import HTML
 from calculations import (
     calculate_growth,
     calculate_margin
@@ -203,6 +204,13 @@ def create_report_html(
             .numeric {{
                 text-align: right;
             }}
+            
+            .report-chart{{
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-top: 15px;
+            }}
 
             .growth-positive {{
                 color: #2e7d32;
@@ -355,6 +363,7 @@ def create_report_html(
         <img
             src="{chart_filename}"
             alt="Revenue Development"
+            class="report-chart"
         >
 
 
@@ -415,3 +424,9 @@ def create_report(
         encoding="utf-8"
     ) as file:
         file.write(report)
+
+    pdf_path = os.path.join(
+        output_folder,
+        f"{ticker}_{period}_report.pdf"
+    )
+    HTML(filename=file_path).write_pdf(pdf_path)
