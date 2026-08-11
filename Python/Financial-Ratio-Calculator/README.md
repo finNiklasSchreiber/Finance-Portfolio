@@ -38,20 +38,56 @@ A modular Python-based financial analysis tool for equity research.
 - Matplotlib
 - WeasyPrint
 
-## Added in Last Update — v0.5
+## Setup
+Indicator is currently set up for Windows.
 
-- Added PDF financial analysis reports
-- Added HTML-to-PDF report generation
-- Improved PDF chart layout
+### Requirements
+- Python 3.13 or later
+- Git
+
+### Installation
+1. Clone the repository
+2. Navigate to `Python/Financial-Ratio-Calculator` in PowerShell
+3. Create a virtual environment:
+
+   `python -m venv .venv`
+4. Activate the virtual environment:
+
+   `.\.venv\Scripts\Activate.ps1`
+5. Install the required Python packages:
+
+   `pip install -r requirements.txt`
+6. Run Indicator:
+
+   `python main.py`
+
+### PDF Generation
+
+Indicator uses a bundled WeasyPrint executable for PDF generation.
+
+The executable is located at:
+
+`tools/weasyprint.exe`
+
+No separate WeasyPrint Python package or native PDF library installation is required.
+
+
+## Added in Last Update — v0.6
+
+- Added reproducible Windows setup
+- Added bundled WeasyPrint executable for PDF generation
+- Removed the Python WeasyPrint dependency
+- Added automatic creation of the output folder
+- Improved portability across Windows systems
 
 
 ### Project Status
 Learning project - actively developed.
 
 ### Roadmap
-- PDF financial analysis reports
 - Generic financial metric charting
 - Historical profitability charts
 - Cash flow visualization
 - Improved financial data sources
 - More advanced financial ratios
+- Cross-platform support
