@@ -1,6 +1,6 @@
 import os
-os.environ["WEASYPRINT_DLL_DIRECTORIES"] = r"C:\msys64\mingw64\bin"
-from weasyprint import HTML
+import subprocess
+
 from calculations import (
     calculate_growth,
     calculate_margin
@@ -429,4 +429,18 @@ def create_report(
         output_folder,
         f"{ticker}_{period}_report.pdf"
     )
-    HTML(filename=file_path).write_pdf(pdf_path)
+
+    weasyprint_path = os.path.join(
+        os.path.dirname(__file__),
+        "tools",
+        "weasyprint.exe"
+    )
+
+    subprocess.run(
+        [
+            weasyprint_path,
+            file_path,
+            pdf_path
+        ],
+        check=True
+    )

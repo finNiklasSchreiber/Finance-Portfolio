@@ -64,6 +64,10 @@ historical_growth = calculate_historical_numbers(
     revenue,
     calculate_growth
 )
+
+"""Making sure output folder exists"""
+os.makedirs("output", exist_ok=True)
+
 """Revenue Chart"""
 chart_path = os.path.join(
     "output",
